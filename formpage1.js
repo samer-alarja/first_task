@@ -49,9 +49,11 @@ data:{
       //  processData: false, 
       },
 headers:{
-      token:'491a6df9e65af0b0e9e410178cc147c51f6d602da7d1626ead554b0e817b52c9'
+      token:'4c0e6f6d3734976eeb3d5e9cff9c813a91b92eb6f22d39c0c0d32239f29e81a3'
       }, 
     });
+    alert("You have rated the product");
+
 }
 function fun(val) {
 var myArray = val.value.split(" ");
@@ -68,8 +70,5 @@ for(i=0;i < myArray.length;i++ ){
    }else{
     $('#points').text(15 - (len));
    }
-
  }
-
 };
-

@@ -2,11 +2,11 @@ $.ajax({
     type:'GET',
     url:'https://test.dumyah.com/api/v1/review/purchases-list',
     headers:{
-        token: '82e8931d5d723a4a505ac73a7e84ff77b2e0983cd36c8bf02404c6b8006b87a0'
+        token: '1b33deba3db817619b316c6b42c8d8e3ce8add6dff549ddb80cd3ca59603c22c'
            },
 success: function (response) {
     JSON.stringify(response)
-    $.get("ppersonpage9.ejs").then(function(template){
+    $.get("ppersonpage.ejs").then(function(template){
 for (var i = 0; i < response.data.purchases_list.length ; i++){
     var hiddenval = response.data.purchases_list[i].product_id;
     $("body").append(ejs.render(template,{response:response,hiddenval:hiddenval,i:i}))
