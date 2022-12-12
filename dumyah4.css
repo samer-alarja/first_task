@@ -21,7 +21,7 @@
 }
 .div-left{
     width: 25%;
-    margin: 55px 0 0 35px;
+    margin: 55px 30px 0 35px;
     float: left;
 }
 .center{
@@ -29,7 +29,7 @@
     margin-top: 65px;
     width: 46%;
 }
-#verified{
+.verified{
     display: none;
 }
 #navv{
@@ -83,7 +83,18 @@
     display: flex;
     justify-content: center;
 }
-@media screen and (max-width:1560px){
+
+.textstyle{
+    font-size:14px;
+    font-family: 'Cairo';
+    font-family:sans-serif;
+    color: #333745;
+    float:left;
+    width:100%;
+    margin-top:20px;
+}
+
+@media screen and (max-width:1502px){
     #navv{
         height: 93px;
     }
@@ -143,7 +154,7 @@
         display: none;
     }
 
-    #verified{
+    .verified{
         display: block;
     }
     .float{
@@ -158,5 +169,5 @@
     #Customer{
         display: none;
     }
+   
 }
-

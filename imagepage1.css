@@ -13,13 +13,13 @@ img{
 .divleft{
     width: 8%;
     background-color: black;
-    height:980px;
+    height:902px;
     float: left;
 }
 .divright{
     width: 8%;
     background-color: black;
-    height:980px;
+    height:902px;
     float: left;
 }
 .divtop{
@@ -30,9 +30,23 @@ img{
 }
 .imgprodcut{
     width:50%;
-    height:980px;
-    
+    height:902px;
 }
+.button-close{
+   float: right;
+   margin: 12px;
+}
+
+.button2 i{
+    margin-top: 5px;
+}
+.button2{display: none;}
+.button2 span{
+position: relative;
+bottom: 4px;
+left: 5px;
+}
+
 @media screen and (max-width:1400px){ 
    
     .divv{            
@@ -72,9 +86,15 @@ img{
     }
     
     .imgprodcut{
-        height:777px;
+        height:720px;
         width: 100%;
         float: left;
         
+    }
+    .button2{
+        display: block;
+    }
+    .button1{
+        display: none;
     }
 }

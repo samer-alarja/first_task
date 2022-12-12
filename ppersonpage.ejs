@@ -1,6 +1,22 @@
-<div id='merge<%= i %>' class='merge'><img id='img'src='<%= response.data.purchases_list[i].image %>' width='250px' height='250px'>
-<p id='name' name='name' style='padding-top:80px'><%= response.data.purchases_list[i].name %></p></div>
-<a onclick='functionn("<%= i %>")' class='rateYo2'><div id='rateYo2<%= i %>'></div></a>
-<input id='hiddden<%= i %>' type='hidden' value='<%= hiddenval%>'>
-<div class='d-flex justify-content-center'><a onclick='funnctionbutton("<%= i %>")'><input type='button' id='buttonhide<%= i %>' class='button' value='Submit Review' ></div></a><hr id='hrhide<%= i %>' width='50%' style='margin-top: 60px;'>
- 
+<div class="flex" id="hide<%= i %>">
+    <div id='merge<%= i %>' class='merge'>
+        <img id='img'src='<%= response.data.purchases_list[i].image %>' width='200px' height='200px'>
+        <p id='name' name='name'><%= response.data.purchases_list[i].name %>
+    </div>
+</p>
+<div class="star">
+    <a onclick='functionn("<%= i %>")' class='rateYo2'>
+    <div id='rateYo2<%= i %>'></div></a>
+    <a onclick='functionn("<%= i %>")' class='rateYo3'>
+    <div id='rateYo3<%= i %>'></div></a>
+  </div>
+  <input id='hiddden<%= i %>' type='hidden' value='<%= hiddenval%>'>
+<div class='d-flex justify-content-center'>
+    <a onclick='funnctionbutton("<%= i %>")'>
+ <input type='submit' id='inputid' value='write a review' ></div></a>
+<hr id='hrhide<%= i %>' class="hrhide" width='100%' style='margin-top: 60px;'> 
+</div>
+
+
+
+

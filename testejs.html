@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
     <body>
         <div id="ssss" ></div>
     </body>
@@ -13,4 +13,163 @@
         alert("samer")
        alert(ejs.render(template, {name: "samer"})) 
     });
-</script>
+</script> -->
+ <!DOCTYPE html>
+<html lang = "en">
+<head>
+<meta charset = "UTF-8">
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/jQuery/3.4.1/jQuery.js"> </script>
+<link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title> Star rating SVG  </title>
+<style>
+
+</style>
+</head>
+<body>
+    <svg width="40" height="37" viewBox="0 0 40 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g filter="url(#filter0_ii_2_909)">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.3981 1.47836C19.1884 -0.235873 20.5288 -0.258114 21.3766 1.43046L23.9895 6.63477C24.8373 8.32163 25.7007 10.0427 25.9096 10.4601C26.1202 10.8759 26.726 11.2796 27.2587 11.3549C27.7914 11.4319 29.7793 11.7142 31.6733 11.9862L37.2804 12.7852C39.1743 13.0572 39.5852 14.3351 38.1943 15.6268L33.9729 19.5446C32.5803 20.8363 31.1807 22.2066 30.8604 22.5898C30.5418 22.9713 30.3329 23.654 30.3991 24.1022C30.4635 24.5521 30.7873 26.4358 31.118 28.2903L32.1451 34.0438C32.4758 35.8983 31.36 36.6989 29.6662 35.823L24.6771 33.2448C22.9816 32.3689 21.199 31.4484 20.7151 31.1987C20.2312 30.9489 19.3625 30.9882 18.7828 31.2876C18.2049 31.587 16.344 32.5485 14.6502 33.4244L10.0058 35.823C8.31205 36.6989 7.18925 35.8966 7.51303 34.042L8.51572 28.292C8.83951 26.4375 9.16852 24.5521 9.24685 24.1022C9.32519 23.654 8.99618 22.9713 8.51572 22.5898C8.03527 22.2066 6.5382 20.8003 5.19083 19.4642L1.39768 15.7072C0.0485728 14.3711 0.497694 13.064 2.3934 12.8005L8.39909 11.9708C10.2965 11.7073 12.1922 11.4319 12.6135 11.3549C13.0348 11.2796 13.6562 10.8759 13.9922 10.4601C14.3299 10.0427 15.2508 8.3011 16.0411 6.58686L18.3981 1.47836Z" fill="#F2F6FB"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.3981 1.47836C19.1884 -0.235873 20.5288 -0.258114 21.3766 1.43046L23.9895 6.63477C24.8373 8.32163 25.7007 10.0427 25.9096 10.4601C26.1202 10.8759 26.726 11.2796 27.2587 11.3549C27.7914 11.4319 29.7793 11.7142 31.6733 11.9862L37.2804 12.7852C39.1743 13.0572 39.5852 14.3351 38.1943 15.6268L33.9729 19.5446C32.5803 20.8363 31.1807 22.2066 30.8604 22.5898C30.5418 22.9713 30.3329 23.654 30.3991 24.1022C30.4635 24.5521 30.7873 26.4358 31.118 28.2903L32.1451 34.0438C32.4758 35.8983 31.36 36.6989 29.6662 35.823L24.6771 33.2448C22.9816 32.3689 21.199 31.4484 20.7151 31.1987C20.2312 30.9489 19.3625 30.9882 18.7828 31.2876C18.2049 31.587 16.344 32.5485 14.6502 33.4244L10.0058 35.823C8.31205 36.6989 7.18925 35.8966 7.51303 34.042L8.51572 28.292C8.83951 26.4375 9.16852 24.5521 9.24685 24.1022C9.32519 23.654 8.99618 22.9713 8.51572 22.5898C8.03527 22.2066 6.5382 20.8003 5.19083 19.4642L1.39768 15.7072C0.0485728 14.3711 0.497694 13.064 2.3934 12.8005L8.39909 11.9708C10.2965 11.7073 12.1922 11.4319 12.6135 11.3549C13.0348 11.2796 13.6562 10.8759 13.9922 10.4601C14.3299 10.0427 15.2508 8.3011 16.0411 6.58686L18.3981 1.47836Z" fill="url(#paint0_linear_2_909)" fill-opacity="0.4" style="mix-blend-mode:soft-light"/>
+        </g>
+        <path d="M18.8485 1.68602L18.8485 1.68616L16.4915 6.79452C16.4915 6.79456 16.4915 6.79461 16.4915 6.79465C16.0928 7.6594 15.661 8.53142 15.2854 9.2417C14.9198 9.93291 14.5829 10.5185 14.378 10.7719C14.3779 10.772 14.3779 10.772 14.3778 10.7721L13.9922 10.4601C13.6562 10.8759 13.0348 11.2796 12.6135 11.3549L18.8485 1.68602ZM18.8485 1.68602C19.2133 0.894813 19.6195 0.678407 19.8739 0.674275C20.1285 0.67014 20.542 0.873445 20.9333 1.653L23.5463 6.85731L23.5463 6.85748M18.8485 1.68602L23.5463 6.85748M23.5463 6.85748C24.3941 8.54429 25.2573 10.2651 25.466 10.6821L25.4672 10.6843M23.5463 6.85748L25.4672 10.6843M25.4672 10.6843C25.6238 10.9934 25.9006 11.2568 26.189 11.4483C26.4808 11.6422 26.8339 11.7955 27.1877 11.8458C27.4141 11.8785 27.9043 11.9484 28.5384 12.0389C29.3954 12.1612 30.5155 12.321 31.6028 12.4771L31.6033 12.4772M25.4672 10.6843L31.6033 12.4772M31.6033 12.4772L37.2099 13.2761C37.21 13.2761 37.2101 13.2761 37.2103 13.2762C38.0884 13.4024 38.4189 13.7326 38.497 13.9754C38.5739 14.2147 38.4997 14.6662 37.8569 15.2633C37.8568 15.2633 37.8568 15.2633 37.8568 15.2634L33.6356 19.1809C32.2505 20.4656 30.8246 21.8592 30.4798 22.2718L30.4797 22.2719M31.6033 12.4772L30.4797 22.2719M30.4797 22.2719C30.2675 22.5261 30.1088 22.8562 30.0111 23.1762C29.9145 23.4924 29.8613 23.8521 29.9081 24.1725C29.974 24.6329 30.2996 26.5264 30.6297 28.3774L30.6297 28.3774M30.4797 22.2719L30.6297 28.3774M30.6297 28.3774L31.6568 34.1308C31.6568 34.1309 31.6568 34.1309 31.6568 34.1309C31.8081 34.9794 31.5963 35.396 31.3756 35.5544C31.1505 35.7159 30.6734 35.7855 29.894 35.3824L29.8939 35.3824M30.6297 28.3774L29.8939 35.3824M29.8939 35.3824L24.9048 32.8042L24.9048 32.8042M29.8939 35.3824L24.9048 32.8042M24.9048 32.8042C23.2092 31.9282 21.4266 31.0077 20.9426 30.7579C20.5968 30.5795 20.1632 30.5234 19.7622 30.5417C19.355 30.5604 18.9203 30.6584 18.5552 30.847L18.5547 30.8472M24.9048 32.8042L18.5547 30.8472M18.5547 30.8472C18.2261 31.0175 17.4826 31.4018 16.5907 31.8629C15.9146 32.2124 15.1532 32.606 14.4226 32.9838C14.4226 32.9838 14.4225 32.9838 14.4224 32.9839L9.77824 35.3823L9.778 35.3824M18.5547 30.8472L9.778 35.3824M9.778 35.3824C8.99971 35.7849 8.51979 35.7162 8.29119 35.5529C8.06706 35.3928 7.85372 34.9745 8.00163 34.1273L8.00164 34.1272M9.778 35.3824L8.00164 34.1272M8.00164 34.1272L9.00432 28.3773L8.00164 34.1272Z" stroke="white" stroke-opacity="0.4" stroke-width="0.991964"/>
+        <defs>
+        <filter id="filter0_ii_2_909" x="-4.34092" y="-4.7816" width="48.3197" height="45.9196" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+        <feOffset dx="4.95982" dy="4.95982"/>
+        <feGaussianBlur stdDeviation="4.95982"/>
+        <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0.65098 0 0 0 0 0.670588 0 0 0 0 0.741176 0 0 0 0.5 0"/>
+        <feBlend mode="normal" in2="shape" result="effect1_innerShadow_2_909"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+        <feOffset dx="-4.95982" dy="-4.95982"/>
+        <feGaussianBlur stdDeviation="4.95982"/>
+        <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0.894323 0 0 0 0 0.907958 0 0 0 0 0.9625 0 0 0 1 0"/>
+        <feBlend mode="normal" in2="effect1_innerShadow_2_909" result="effect2_innerShadow_2_909"/>
+        </filter>
+        <linearGradient id="paint0_linear_2_909" x1="60.1199" y1="18.1782" x2="24.4114" y2="-23.6821" gradientUnits="userSpaceOnUse">
+        <stop/>
+        <stop offset="1" stop-color="white"/>
+        </linearGradient>
+        </defs>
+        </svg>
+        
+
+        <svg width="50" height="47" viewBox="0 0 50 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M22.9343 2.28825C23.9441 0.0978308 25.6569 0.0694121 26.7401 2.22704L30.0788 8.87698C31.1621 11.0324 32.2653 13.2316 32.5323 13.765C32.8014 14.2962 33.5755 14.8121 34.2561 14.9083C34.9368 15.0066 37.4769 15.3673 39.897 15.7149L47.0616 16.7358C49.4816 17.0834 50.0066 18.7164 48.2293 20.3668L42.8353 25.3729C41.0559 27.0233 39.2675 28.7743 38.8582 29.264C38.4512 29.7515 38.1843 30.6237 38.2688 31.1965C38.3511 31.7714 38.7648 34.1782 39.1874 36.5479L40.4998 43.8996C40.9224 46.2692 39.4966 47.2923 37.3324 46.1731L30.9574 42.8787C28.7909 41.7594 26.5132 40.5833 25.8949 40.2642C25.2765 39.945 24.1666 39.9953 23.4259 40.3779C22.6874 40.7604 20.3096 41.989 18.1453 43.1082L12.2108 46.1731C10.0465 47.2923 8.61182 46.2671 9.02555 43.8974L10.3068 36.5501C10.7205 34.1804 11.1409 31.7714 11.241 31.1965C11.3411 30.6237 10.9207 29.7515 10.3068 29.264C9.69284 28.7743 7.77992 26.9774 6.05829 25.2701L1.21148 20.4696C-0.512377 18.7623 0.0614996 17.0921 2.48379 16.7555L10.1577 15.6952C12.5822 15.3586 15.0045 15.0066 15.5428 14.9083C16.0811 14.8121 16.8752 14.2962 17.3045 13.765C17.736 13.2316 18.9127 11.0062 19.9225 8.81577L22.9343 2.28825Z" fill="url(#paint0_linear_4_1620)"/>
+            <defs>
+            <linearGradient id="paint0_linear_4_1620" x1="0.259975" y1="23.7827" x2="49.3789" y2="23.4646" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#CE3381"/>
+            <stop offset="0.9982" stop-color="#FF3F98"/>
+            </linearGradient>
+            </defs>
+            </svg>
+            
+     <!DOCTYPE html>
+     <html lang="en">
+     <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>	
+@import "compass/css3";
+.rating {
+	background: #fff;
+}
+
+input[type="radio"] {
+	position: fixed;
+	top: 0;
+	right: 100%;
+}
+
+label {
+	font-size: 5.5em;
+	padding: 0.1em;
+	margin: 0;
+	float: left;
+	cursor: pointer;
+	
+}
+
+input[type="radio"]:checked ~ input + label {
+	background: none;
+	color: rgb(209, 207, 207);
+}
+
+input + label {
+	background: #fff;
+	color: #CE3381;
+	margin: 0 0 1em 0;
+}
+
+
+
+        </style>
+     </head>
+     <body>
+             <div class="rating">
+                <input type="radio" name="test" id="one" checked />
+                <label for="one"><i class="fa fa-star"></i></label>
+
+                <input type="radio" name="test" id="two" />
+                <label for="two"><i class="fa fa-star"></i></label>
+
+                <input type="radio" name="test" id="three" />
+                <label for="three"><i class="fa fa-star"></i></label>
+
+                <input type="radio" name="test" id="four" />
+                <label for="four"><i class="fa fa-star"></i></label>
+                
+                <input type="radio" name="test" id="five" />
+                <label for="five"><i class="fa fa-star"></i></label>
+        </div>
+
+        
+     </body>
+     </html>    
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #display_image{
+        width: 375px;
+        height: 211px;
+        
+        background-position: center;
+        background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <input type="file" id="image_input" accept="image/*" onchange="displayimgfun()">
+    <div id="display_image"></div>
+ 
+    <script>
+       
+
+        const image_input = document.querySelector("#image_input");
+        var uploaded_image = "";
+        image_input.addEventListener("change", function(){
+            const reader = new FileReader();
+            reader.addEventListener("load",() =>{alert("samer4")
+                uploaded_image = reader.result;
+                document.querySelector("#display_image").style.backgroundImage = `url(${uploaded_image})`
+            });
+            reader.readAsDataURL(this.files[0]);
+        })
+
+
+    </script>
+           </script>
+</body>
+</html>

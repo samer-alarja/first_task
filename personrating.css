@@ -1,28 +1,91 @@
-.rateYo2{
-    display: flex;
-    justify-content: center;    
+.master{
+    width: 60%;
+    margin: auto; 
+}
+.flex{
+    display: inline-block;
+    width: 30.8%;
+    margin-bottom: 50px;
+}
+h5{
+    margin-top: 50px;
+    margin-left: 40px;
+}
+.hr-header{
+    margin-left: 40px;
 }
 .merge{
     margin-top: 25px;
     margin-bottom: 15px;
+}
+
+.star{
+    margin-top: 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
-.button{
-    background-color:white;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    width: 400px;
-    border-radius:17px;
-    margin-top: 40px;
+
+#inputid{
+    display: none;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, .2);
     color: black;
-    border: 1px solid black;
+    border-radius:17px;
+    width:340px;
+    height:45px;
+    font-size: 15px;
+    margin-left: 8px;
+    margin-top: 40px;
+
 }
-#name{
-    width: 300px;
+.hrhide{
+    display: none;
 }
-hr{
-    margin: auto;
+.rateYo3{
+display: none;
+}
+
+@media screen and (min-width:1610px){
+    #img{
+        margin-left: 65px;
+        margin-bottom: 20px;
+        }
+        #name{
+            width: 70%;
+            margin: auto;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        
+        }
+}
+@media screen and (max-width:1610px){
+    #inputid{
+        display: block;
+    }
+    .hrhide{
+        display: block;
+    }
+    .flex{
+        width: 100%;
+    }
+    .merge{
+        margin-top: 25px;
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      
+
+    }
+    .hr-header , h5{
+        display: none;
+    }
+    .rateYo2{
+        display: none;
+    }
+    .rateYo3{
+        display: block;
+    }
 }

@@ -1,5 +1,4 @@
 <div class="master">
-    
     <h4 class="Reviews" style="margin-left: 14px;margin-bottom: 20px">Create Reviews</h4>
     <hr  width='90%' style="margin-left: 14px;" > 
     <div class='merge'><img id='img'src='<%= jsonResponse.data.product_info.image %>' width='150px' height='150px'>
@@ -23,8 +22,8 @@
     <div class="flex-image">
         <div id="display_image" style="margin-top: 20px;"></div>
     </div>
-    <hr id="hrr" width='90%'> 
-    <p class="paragYour" style="margin-top: 14px;">Your review about the product</p>
+    <hr id="hrr" width='90%' style="display: none;"> 
+    <p class="paragYour" style="margin-top: 24px;">Your review about the product</p>
     <div class='hidden2' id='textarea'><textarea onkeyup='fun(this)' class='hidden1' id='textareaa'
     placeholder='What did you like or dislike? what did you use this product for?' rows='6' cols='40'></textarea>
     <p style='font-size:23px;margin-top:30px;opacity:0.5;'><span id='points'>15</span> word/s left to get 25 points</p>
@@ -35,20 +34,19 @@
     <input id='hidden' type='hidden' value='<%= hiddenval %>'>
 </div>
 <script>
-var count = 0 ;
-$("#firstimg").on("change", function() {
-    $("#hrr").show()
-count++;
-             var uploaded_image = "";
-                 const reader = new FileReader();
-                 reader.addEventListener("load",() =>{
-                     uploaded_image = reader.result;
-                    var vrr= `url(${uploaded_image})`
-                    $("#display_image").append("<div class='divv' id='div"+count+"'></div>")                   
-                    document.querySelector("#div"+count+"").style.backgroundImage = vrr
-
-                 });
-                 reader.readAsDataURL(this.files[0]);
-           });
-
-</script>
+    var count = 0 ;
+    $("#firstimg").on("change", function() {
+        $("#hrr").show()
+    count++;
+                 var uploaded_image = "";
+                     const reader = new FileReader();
+                     reader.addEventListener("load",() =>{
+                         uploaded_image = reader.result;
+                        var vrr= `url(${uploaded_image})`
+                        $("#display_image").append("<div class='divv' id='div"+count+"'></div>")                   
+                        document.querySelector("#div"+count+"").style.backgroundImage = vrr
+    
+                     });
+                     reader.readAsDataURL(this.files[0]);
+               });
+    </script>

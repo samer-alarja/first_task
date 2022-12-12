@@ -37,16 +37,27 @@ $.ajax({
    //        },
 success: function (response) {
    JSON.stringify(response)
-   $.get("imagee.ejs").then(function(template){
+  
+   $.get("imagee.ejs?v=6").then(function(template){
    $(".p").append(ejs.render(template,{response:response,iid:iid}))
    $("#rateYo2"+iid+"").rateYo({
       rating: response.data.list_reviews[iid].rating,
       numStars:5,
       ratedFill: "#ff3399",
       starWidth: "30px",
-      spacing: "10px",
+      spacing: "0",
       readOnly: true
    }); 
-   })
- } 
+   }).then(function(){
+   if(response.data.list_reviews[iid].verified_purchase == false){
+      $("#verifiedimg").hide();
+     
+}
 })
+} 
+
+})
+
+function returnmainpage(){
+   window.location.href = "index.html";
+}
