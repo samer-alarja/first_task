@@ -1,5 +1,6 @@
 <div id='append0'>
-    <img src='image/girl.png' width='55px' height='55px' style='border-radius: 25px;float: left'>
+    <img class="img_origin<%= reeview_id %>" src='image/girl.png' width='55px' height='55px' style='border-radius: 25px;float:left'>
+    <span class="image_alt image_alt<%= reeview_id %>"><b class="image_alt_p"><%= first_letter %></b></span>
     <div><b id='display<%= reeview_id %>' class='display<%= reeview_id %> display' style='font-size: 13px;float:right;'>verified purshase</b>
     <b style='font-size: 17px;margin-left: 11px;'><%= name%></b><br>
     <div id='rateYoo<%= i %>' style='float: left;margin-left: 4px;'></div>
@@ -9,7 +10,7 @@
     <a onclick='funimage("<%= i %>")'><img src='image/girl.png' width='140px' height='140px' style='cursor: pointer;'></a>
     </div><p style='opacity: 0.3;float: left;font-size: 17px;margin: 12px 0 10px 0;width: 100%;'><span class="helpfulcount"><%= helpful_count %></span> peaple found this helpful</p>
     <input class="helppp<%= reeview_id %>" id='helpfulremove<%= i %><%= reeview_id %>' onclick='helpremovee("<%= i %>","<%= reeview_id%>")' type='button' value='helpful' style='margin:0 0 20px 0;background-color: white;border: 1px solid black;color: black;border-radius:10px;width: 100px ;height: 30px;font-size: 15px;float: left;cursor: pointer;'>
-    <p  id='helpfulshow<%= i %><%= reeview_id %>' style='color:green;display: none'>Thank you for your feedback.</p>
+    <p class="helpfulshow helpfulshow<%= reeview_id %>" id='helpfulshow<%= i %><%= reeview_id %>' style='color:green;display: none'>Thank you for your feedback.</p>
     <input id='hiddden<%= i %>' type='hidden' value='<%= reeview_id %>'>
     <input id='productid<%= i %>' type='hidden' value='<%= productid %>'>
     

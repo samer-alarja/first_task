@@ -2,7 +2,7 @@ const xhttp = new XMLHttpRequest();
 xhttp.onload = function() {
 var jsonResponse = JSON.parse(xhttp.response);
 var hiddenval = jsonResponse.data.product_info.product_id;
-$.get("formpage.ejs?v=5").then(function(template){
+$.get("formpage.ejs?v=9").then(function(template){
 $("body").append(ejs.render(template,{jsonResponse:jsonResponse,hiddenval:hiddenval}))
 $("#rateYo2").rateYo({
 numStars:5,
@@ -59,10 +59,22 @@ var number = parseInt(ratingval);
 //       token:'4c0e6f6d3734976eeb3d5e9cff9c813a91b92eb6f22d39c0c0d32239f29e81a3'
 //       }, 
 //     });
+
+if(number == ""){
+    alert("please write a rating");
+}else if(textarea == ""){
+    alert("please write a Your review about the product");
+}else{
     alert("You have rated the product");
     window.location.href = "index.html";
+}
+
+
+   
 }  
- 
+function exi(count){
+    $(".div_flex"+count+"").hide();
+}
 
 function fun(val) {
 var myArray = val.value.split(" ");

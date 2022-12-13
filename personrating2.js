@@ -18,7 +18,6 @@ for (var i = 0; i < response.data.purchases_list.length ; i++){
            starWidth:"55px",
            spacing:"0px",   
            fullStar:true,
-           
     });  
     $("#rateYo3"+i+"").rateYo({
         numStars:5,
@@ -26,7 +25,7 @@ for (var i = 0; i < response.data.purchases_list.length ; i++){
         starWidth:"93px",
         spacing:"0px",   
         fullStar:true
- }); 
+    }); 
     $("#rateYo2"+i+"").rateYo().on("rateyo.set", function (e, data) {
       sessionStorage.removeItem('datarating');
       sessionStorage.setItem("datarating", data.rating);
@@ -55,7 +54,7 @@ function functionn(i){
     //         rating:datarating,
     //         },
     //     headers:{
-    //         token:'ff3c99ec60c609ebff49a613da7a52961afc1e1a3f7da650299fda6a534e3e8f'
+    //         token:'4bf3a121690b8cc35e79c0b876e3ba8622aec563539ceb9de522e5ee2ef5addb'
     //         }, 
     //     });
 // $('#merge'+i+'').hide();

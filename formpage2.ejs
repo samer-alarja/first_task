@@ -14,8 +14,8 @@
 </div>
 </div>
     <hr  width='90%' style="margin-left: 14px;" > 
-    <p class="parag">add the photo</p>
-    <div class='fatherphoto'><div class='photo'><label for='firstimg'><i class='fa fa-camera' style='margin-top:70px;font-size:78px;color:rgb(211, 210, 210);cursor: pointer;'></i>
+    <div class="div_parag"><p class="parag">add the photo</p></div>
+    <div class='fatherphoto'><div class='photo'><label id="label" for='firstimg'><i class='fa fa-camera' style='margin-top:70px;font-size:78px;color:rgb(211, 210, 210);cursor: pointer;'></i>
     <p style='width:130px;color:#80aaff;cursor: pointer;'>Browse to find or drag image here</p>
     <input type='file' name='file' id='firstimg' class='inputimg' accept='image/*' style='display: none;' multiple></label>
     </div>
@@ -23,10 +23,10 @@
         <div id="display_image" style="margin-top: 20px;"></div>
     </div>
     <hr id="hrr" width='90%' style="display: none;"> 
-    <p class="paragYour" style="margin-top: 24px;">Your review about the product</p>
+    <div class="div_paragYour"><p class="paragYour" style="margin-top: 24px;">Your review about the product</p></div>
     <div class='hidden2' id='textarea'><textarea onkeyup='fun(this)' class='hidden1' id='textareaa'
     placeholder='What did you like or dislike? what did you use this product for?' rows='6' cols='40'></textarea>
-    <p style='font-size:23px;margin-top:30px;opacity:0.5;'><span id='points'>15</span> word/s left to get 25 points</p>
+    <div class="div_points"><p  style='font-size:23px;margin-top:30px;opacity:0.5;'><span id='points'>15</span> word/s left to get 25 points</p></div>
     </div>
     <div class="container"><input onclick='runpost()' onclick='uploadFile()' type='button' class='button' value='Submit Review'>
     </div>
@@ -41,12 +41,16 @@
                  var uploaded_image = "";
                      const reader = new FileReader();
                      reader.addEventListener("load",() =>{
-                         uploaded_image = reader.result;
-                        var vrr= `url(${uploaded_image})`
-                        $("#display_image").append("<div class='divv' id='div"+count+"'></div>")                   
-                        document.querySelector("#div"+count+"").style.backgroundImage = vrr
-    
-                     });
+                        uploaded_image = reader.result;
+                    var vrr= `url(${uploaded_image})`
+                    $("#display_image").append("<div class='div_flex div_flex"+count+"'><div style='width:30%;'>"+
+                        "<div class='button1' style='width: 338%;height: 27px;background-color:#F5F5F5;'>"+
+                        "<button style='background-color:white;' type='button' class='btn-close button-close' data-bs-dismiss='toast' aria-label='Close'  onclick='exi("+count+")'>"+
+                        "</button></div></div>"+
+                        "<div class='divv' id='div"+count+"'></div></div>")                   
+                    document.querySelector("#div"+count+"").style.backgroundImage = vrr;
+                    
+                 });
                      reader.readAsDataURL(this.files[0]);
                });
     </script>

@@ -38,7 +38,7 @@ $.ajax({
 success: function (response) {
    JSON.stringify(response)
   
-   $.get("imagee.ejs?v=6").then(function(template){
+   $.get("imagee.ejs?v=7").then(function(template){
    $(".p").append(ejs.render(template,{response:response,iid:iid}))
    $("#rateYo2"+iid+"").rateYo({
       rating: response.data.list_reviews[iid].rating,

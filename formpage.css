@@ -19,8 +19,8 @@
 .paragYour{
   font-weight:400 ;
   font-size: 20px;
-position: relative;
-top: 15px;
+  position: relative;
+  top: 15px;
 }
 .photo{
   height: 277px;
@@ -37,7 +37,8 @@ textarea{
   opacity: 0.5;
   padding: 25px;
   width: 90%;
-  margin-top: 10px;
+  position: relative;
+  top: 15px;
 }
 .hidden2{
   margin-top: 20px ;
@@ -69,11 +70,15 @@ textarea{
   display: none;
 }
 .divv{
-  float: left;
-  width: 405px;
+  
+  width: 100%;
   height: 200px;
   background-position: center;
   background-size: cover;
+}
+.div_flex{
+float: left;
+width: 30%;
 }
 #hrr{
   display: none;
@@ -94,10 +99,14 @@ hr{
     display: none;
   }
 textarea{
-    width: 99%;
+    width: 60%;
+    display: flex;
+    margin: auto;
   }
 .photo{
-    width: 99%;
+  width: 60%;
+display: flex;
+margin: auto;
   }
 .imgres{
     display: none;
@@ -119,5 +128,27 @@ textarea{
   }
 #rateYo3{
     display: block;
+  }
+
+  .flex-image{
+    display: none;
+  }
+  #hrr{
+     width: 0%;
+  }
+  .div_paragYour{
+    width: 60%;
+    margin: auto;
+  }
+  .div_parag{
+    width: 60%;
+    margin: auto;
+  }
+  #label{
+    margin: auto;
+  }
+  .div_points{
+    width: 60%;
+    margin: auto;
   }
 }

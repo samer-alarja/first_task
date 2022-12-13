@@ -93,7 +93,25 @@
     width:100%;
     margin-top:20px;
 }
-
+.helpfulshow{
+    display: none;
+    color:green;
+}
+.image_alt{
+    color: #ff3385;
+    width:55px; 
+    height:55px;
+    background-color: black;
+    border-radius: 25px;
+    float: left;
+    text-align: center;
+    font-size: 40px;
+}
+.image_alt_p{
+    position: relative;
+    bottom:3px
+    
+}
 @media screen and (max-width:1502px){
     #navv{
         height: 93px;

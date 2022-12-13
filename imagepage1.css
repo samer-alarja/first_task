@@ -13,13 +13,13 @@ img{
 .divleft{
     width: 8%;
     background-color: black;
-    height:902px;
+    height:93.6vh;
     float: left;
 }
 .divright{
     width: 8%;
     background-color: black;
-    height:902px;
+    height:93.6vh;
     float: left;
 }
 .divtop{
@@ -30,7 +30,7 @@ img{
 }
 .imgprodcut{
     width:50%;
-    height:902px;
+    height:93.6vh;
 }
 .button-close{
    float: right;
@@ -86,7 +86,7 @@ left: 5px;
     }
     
     .imgprodcut{
-        height:720px;
+        height:  76.9vh;
         width: 100%;
         float: left;
         

@@ -1,6 +1,11 @@
-const xhttp = new XMLHttpRequest();
-xhttp.onload = function() {
-var jsonResponse = JSON.parse(xhttp.response);
+  $.ajax({
+    type:"GET",
+    url:"https://test.dumyah.com/api/v1/reviews?product_id=23907",
+    headers:{
+            token:'16d25bfee220a24e4530d850a90ced87847fe676bb124bc42bf763d7e4ebf178'
+         },
+         success: function (jsonResponse) {
+
 sessionStorage.setItem("product_id", jsonResponse.data.product_info.product_id);
 $.get("mmainnpage1.ejs?v=10").then(function(template){
 $(".left").append(ejs.render(template,{jsonResponse:jsonResponse}));
@@ -12,9 +17,10 @@ $("#rateYo2").rateYo({
     spacing: "2px",
     readOnly: true,
 
-    
 
+    
 });
+
 }).then(function(){
   for (var i = 0 ; i < jsonResponse.data.rating_summary.length ; i++){
        var number_of_reviews = jsonResponse.data.rating_summary[i].number_of_reviews;
@@ -27,13 +33,18 @@ $("#rateYo2").rateYo({
 
   setTimeout(function(){   
     $.get("mainbutton1.ejs?v=8").then(function(template){
+      
     $(".div-left").append(ejs.render(template,{}));
-    }) },80);
 
-})
+
+    }) 
+  },80);
+
+}).then(function(){
 
  var leenn = jsonResponse.data.list_reviews.length -1;
  for (var i = 0; i < jsonResponse.data.list_reviews.length ; i++){
+  
        var productid = jsonResponse.data.product_info.product_id;
        var name =jsonResponse.data.list_reviews[i].author;
        var date =jsonResponse.data.list_reviews[i].date_added;
@@ -45,15 +56,14 @@ $("#rateYo2").rateYo({
        var reeview_id=jsonResponse.data.list_reviews[i].review_id;
        var coont2=jsonResponse.data.average_product_rating.num_of_reviews;
        var lenght=jsonResponse.data.list_reviews.length;
-
-      //  var image=jsonResponse.data.list_reviews[i].image;
-       addcenter(i,name,date,text,rating,verified_purchase,sshow_helpful,helpful_count,reeview_id,productid,/*image*/);
+       var image=jsonResponse.data.list_reviews[i].image;
+       addcenter(i,name,date,text,rating,verified_purchase,sshow_helpful,helpful_count,reeview_id,productid,image);
        funhr(i,leenn,coont2,lenght,reeview_id);
  }
+})
+//10730 63514 4436 23907 10040 14364/rating
 }
-//10730 63514 4436 23907 10040
-xhttp.open("GET","https://test.dumyah.com/api/v1/reviews?product_id=4436");
-xhttp.send();
+})
 function funpagemain(i,number_of_reviews,length,rating){
 
   setTimeout(function(){   
@@ -73,13 +83,12 @@ function funpagemain(i,number_of_reviews,length,rating){
   },
   52);
 }
-
-
-function addcenter(i,name,date,text,rating,verified_purchase,sshow_helpful,helpful_count,reeview_id,productid,/*image*/){
-$.get("centerr.ejs?v=9").then(function(template){
+function addcenter(i,name,date,text,rating,verified_purchase,sshow_helpful,helpful_count,reeview_id,productid,image){
+setTimeout(function(){
+$.get("centerr.ejs?v=11").then(function(template){
+ var first_letter = name.charAt(0);
 $(".center-append").append(ejs.render(template,{i:i,name:name,date:date,text:text,rating:rating,verified_purchase:verified_purchase
-    ,sshow_helpful:sshow_helpful,helpful_count:helpful_count,reeview_id:reeview_id,productid:productid})
-)
+    ,sshow_helpful:sshow_helpful,helpful_count:helpful_count,reeview_id:reeview_id,productid:productid,first_letter:first_letter}))
 if (sessionStorage.getItem('helpfulremove'+reeview_id+'') =="true" ){
  $('#helpfulremove'+i+''+reeview_id+'').hide();
  $('#helpfulshow'+i+''+reeview_id+'').show();
@@ -93,17 +102,28 @@ $("#rateYoo"+i+"").rateYo({
     spacing: "0",
     readOnly: true
 }); 
-      
+if(image){
+  $('.img_origin'+ reeview_id +'').show();
+  $('.image_alt'+ reeview_id +'').hide();
+  
+}else{
+  $('.img_origin'+ reeview_id +'').hide();
+  $('.image_alt'+ reeview_id +'').show();
+}   
+
+
 if(verified_purchase == false ){
     $("#verified"+ reeview_id +"").hide();
     $("#display"+reeview_id+"").hide();
 }
 if(sshow_helpful == false ){
-  $(".helpfulshow").hide();
-
+  $(".helppp"+reeview_id+"").hide();
+  $(".helpfulshow"+reeview_id+"").show();
 }
 
 })
+},.2);
+
 }
 function funimage(i){
   var ccurrentPage =2;
@@ -144,121 +164,111 @@ function funhr(i,leenn,coont2,lenght,reeview_id)
 
   if (leenn == i)
   {
-    
-    // $(".hr"+leenn+"").css("opacity", "0.001");
+
+
     $(".center-append").after("<div id='linkdiv'>Load More</div>");
     if ( coont2 == lenght ){
       $('#linkdiv').hide();
-      // $("#hr"+reeview_id+"").hide();
-      $('hr:last').hide();
+      $("#hr"+reeview_id+"").hide();
+        setTimeout(function(){   
+          $('hr:last').hide(); },
+       
+
+    15);
+      
     }
+
   }
- 
-
-
-   
 
 
 
 
 
 
-
-//load more page
+  // //load more page
 var coont= 5;
  var currentPage = 2;
 
 $('#linkdiv').on('click', function() {
 
-  //console.log(currentPage);
-    const xhttp = new XMLHttpRequest();
-    xhttp.onload = function() {
-    var jsonResponse = JSON.parse(xhttp.response);
-    currentPage++;
+  $.ajax({
+    type:"GET",
+    url:"https://test.dumyah.com/api/v1/reviews?product_id=23907&current_page="+ currentPage +"",
+    headers:{
+            token:'16d25bfee220a24e4530d850a90ced87847fe676bb124bc42bf763d7e4ebf178'
+         },
+         success: function (jsonResponse) {
+          currentPage++;3
+
+          coont = coont +jsonResponse.data.list_reviews.length;
 
 
-    coont = coont +jsonResponse.data.list_reviews.length;
+          if (jsonResponse.data.average_product_rating.num_of_reviews ==  coont)
+          {
+            $('#linkdiv').hide();
+            setTimeout(function(){  
+              $('hr:last').hide();
+            },
+            12);
+          }
+          let array_length = jsonResponse.data.list_reviews.length;
 
+          for (var i = 0; i < array_length ; i++){
 
-    if (jsonResponse.data.average_product_rating.num_of_reviews ==  coont)
-    {
-      $('#linkdiv').hide();
-    }
-    // if (jQuery.isEmptyObject(jsonResponse.data)) {
-    
-    //   alert("hide");
-    // } else {
-    //   alert("hi");
-    // }
-  
-   // var leenn = jsonResponse.data.list_reviews.length -1;
+             var name =jsonResponse.data.list_reviews[i].author;
+             var date =jsonResponse.data.list_reviews[i].date_added;
+             var text =jsonResponse.data.list_reviews[i].text;
+             var rating=jsonResponse.data.list_reviews[i].rating;
+             var verified_purchase=jsonResponse.data.list_reviews[i].verified_purchase;
+             var sshow_helpful=jsonResponse.data.list_reviews[i].show_helpful;
+             var helpful_count=jsonResponse.data.list_reviews[i].helpful_count;
+             var reeview_id=jsonResponse.data.list_reviews[i].review_id;
+             var productid = jsonResponse.data.product_info.product_id;
+             var image=jsonResponse.data.list_reviews[i].image;
+             addcenter(i,name,date,text,rating,verified_purchase,sshow_helpful,helpful_count,reeview_id,productid,image);
+         }
+        
+         function addcenter(i,name,date,text,rating,verified_purchase,sshow_helpful,helpful_count,reeview_id,productid,image){
+          $.get("loadcenter1.ejs?v=8").then(function(template){
+            var first_letter = name.charAt(0);
+          $(".center-append").append(ejs.render(template,{i:i,name:name,date:date,text:text,rating:rating,verified_purchase:verified_purchase
+              ,sshow_helpful:sshow_helpful,helpful_count:helpful_count,reeview_id:reeview_id,productid:productid,currentPage:currentPage,first_letter:first_letter,image:image}) )
+          }).then(function(){
+          if (sessionStorage.getItem('helpfulremove'+reeview_id+'') == "true"){
+              $('#helpfulremove'+i+''+reeview_id+'').hide();
+              $('#helpfulshow'+i+''+reeview_id+'').show();
+             }
+          $("#rateYoo"+i+""+ currentPage +"").rateYo({
+              rating: rating,
+              numStars:5,
+              ratedFill: "#ff3399",
+              starWidth: "25px",
+              spacing: "0",
+              readOnly: true
+          })
+      }).then(function(){
+          if(verified_purchase == false ){
+             $("#verified"+ reeview_id +"").hide();
+            $("#display"+ reeview_id +"").hide();
+          }
+      }).then(function(){
+        if(sshow_helpful == false ){
+ 
+          $(".helppp"+reeview_id+"").hide();
+          $(".helpfulshow"+reeview_id+"").show();
+        }
 
-   let array_length = jsonResponse.data.list_reviews.length;
-
- for (var i = 0; i < array_length ; i++){
-  
-    var name =jsonResponse.data.list_reviews[i].author;
-    var date =jsonResponse.data.list_reviews[i].date_added;
-    var text =jsonResponse.data.list_reviews[i].text;
-    var rating=jsonResponse.data.list_reviews[i].rating;
-    var verified_purchase=jsonResponse.data.list_reviews[i].verified_purchase;
-    var sshow_helpful=jsonResponse.data.list_reviews[i].show_helpful;
-    var helpful_count=jsonResponse.data.list_reviews[i].helpful_count;
-    var reeview_id=jsonResponse.data.list_reviews[i].review_id;
-    var productid = jsonResponse.data.product_info.product_id;
-    var coont3=jsonResponse.data.average_product_rating.num_of_reviews;
-    var lenght1=jsonResponse.data.list_reviews.length;
-    var lenght1= lenght1 +5;
-    addcenter(i,name,date,text,rating,verified_purchase,sshow_helpful,helpful_count,reeview_id,productid);
-   fuunhr(i,leenn,coont3,lenght1);
-}
-}
-xhttp.open("GET","https://test.dumyah.com/api/v1/reviews?product_id=4436&current_page="+ currentPage +""); 
-xhttp.send();
-     
-
-function addcenter(i,name,date,text,rating,verified_purchase,sshow_helpful,helpful_count,reeview_id,productid){
-    $.get("loadcenter1.ejs?v=5").then(function(template){
-    $(".center-append").append(ejs.render(template,{i:i,name:name,date:date,text:text,rating:rating,verified_purchase:verified_purchase
-        ,sshow_helpful:sshow_helpful,helpful_count:helpful_count,reeview_id:reeview_id,productid:productid,currentPage:currentPage})
-      )
-    }).then(function(){
-    if (sessionStorage.getItem('helpfulremove'+reeview_id+'') == "true"){
-        $('#helpfulremove'+i+''+reeview_id+'').hide();
-        $('#helpfulshow'+i+''+reeview_id+'').show();
-       }
-    $("#rateYoo"+i+""+ currentPage +"").rateYo({
-        rating: rating,
-        numStars:5,
-        ratedFill: "#ff3399",
-        starWidth: "25px",
-        spacing: "0",
-        readOnly: true
-    })
-}).then(function(){
-    if(verified_purchase == false ){
-       $("#verified"+ reeview_id +"").hide();
-      $("#display"+ reeview_id +"").hide();
-    }
-})
-}
-
-function fuunhr(i,leenn,coont3,lenght1)
-{
-  if ( coont3 == lenght1 ){
-    
-
-    setTimeout(function(){  
-    $('hr:last').hide();
-  },
-  12);
-  }
-    
-  
-}
-
-
-
+        if(image){
+          $('.img_origin'+ reeview_id +'').show();
+          $('.image_alt'+ reeview_id +'').hide();
+          
+        }else{
+          $('.img_origin'+ reeview_id +'').hide();
+          $('.image_alt'+ reeview_id +'').show();
+        }  
+      })
+      }
+  }}) 
 })
 }//funtop funhr
 function funimagee(i,ccurrentPage){
@@ -292,3 +302,5 @@ $('#helpfulshow'+i+''+reeview_id+'').show();
   });
   sessionStorage.setItem('helpfulremove'+reeview_id+'',"true");
 }
+
+      
